@@ -28,6 +28,9 @@ jobs:
           fi
           "$SDKMANAGER" --install "ndk;27.2.12479018" "platforms;android-35"
 
+      - name: Preparar ONNX Runtime
+        run: bash scripts/prepare_android_native_deps.sh
+
       - name: Compilar APK
         run: |
           chmod +x gradlew
